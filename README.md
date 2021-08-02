@@ -1,4 +1,4 @@
-# cryptoblade-tool
+# Cryptoblade Combat Tool
 Tool for cryptoblade, it will calculate combat winning probability. 
 This was created purely on JS by scraping the data available on the page.
 No external API calls, no need to enter your metamask details.
