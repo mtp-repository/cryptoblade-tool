@@ -7,9 +7,14 @@ button {
     border-radius: 2px;
     color: white;
     background-color: cadetblue;
-  }
+}
+
+button:hover {
+  background-color: blue;
+  color: yellow;
+} 
   
-  button.current {
-    box-shadow: 0 0 0 2px blue,
-                0 0 0 4px black;
-  }
+button.current {
+  box-shadow: 0 0 0 2px blue,
+              0 0 0 4px black;
+}
