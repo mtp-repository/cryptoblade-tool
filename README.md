@@ -7,7 +7,7 @@ No external API calls, no need to enter your metamask details.
 ![How it works](images/cryptoblade-toolv3.gif)
 - Open cryptoblades site https://app.cryptoblades.io/
 - Please register if you are still not a member.
-- When you are ready! (meaning have a character and a weapon)
+- When you are ready! (meaning you have a character and a weapon)
 - Go to combat
 - Select a stamina cost
 - Select a weapon
@@ -21,11 +21,11 @@ No external API calls, no need to enter your metamask details.
     - TBD
 - Manually install
     - Download the code thru Git
-    - Open chrome browser:
+    - Open Chrome browser:
         - On menu -> More Tools -> Extensions
         - Select button "Load unpacked".
         - Select the directory where you download the tool.
-    - Click the extension button the browser and pin the tool.
+    - Click the extension button in the browser and pin the tool.
     - ![How to install](images/sample2.jpg)
 
 ## Updates
