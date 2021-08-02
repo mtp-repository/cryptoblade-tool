@@ -11,7 +11,7 @@ No external API calls, no need to enter your metamask details.
 - Go to combat
 - Select a stamina cost
 - Select a weapon
-- Once, you see the Enemy list
+- Once, you see the enemy list
 - Click the MTP icon on your chrome extension
 - It should show you your combat winning probability at the bottom of the page near the FIGHT button.
 ![How it works](images/sample1.jpg)
