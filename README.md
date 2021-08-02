@@ -1,5 +1,7 @@
 # cryptoblade-tool
-Tool for cryptoblade, calculate combat probability
+Tool for cryptoblade, it will calculate combat winning probability. 
+This was created purely on JS by scraping the data available on the page.
+No external API calls, no need to enter your metamask details.
 
 ## How it works?
 ![How it works](images/cryptoblade-toolv3.gif)
