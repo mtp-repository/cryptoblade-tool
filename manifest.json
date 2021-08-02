@@ -3,7 +3,7 @@
   "description": "An extension for Cryptoblade!",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting"],
   "background": {
     "service_worker": "battlestat.js"
   },

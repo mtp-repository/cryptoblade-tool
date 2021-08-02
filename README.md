@@ -28,7 +28,11 @@ No external API calls, no need to enter your metamask details.
     - Click the extension button in the browser and pin the tool.
     - ![How to install](images/sample2.jpg)
 
-## Updates
+## Recent updates
+ - 8/2/2021 Submitted the tool in chrome extension web store - awaiting approval.
+
+## Roadmap
+ - Update tool to include rewards
 
 ## Contribution
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
