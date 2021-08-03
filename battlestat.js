@@ -95,12 +95,15 @@ function buttonAction() {
 	}
 
 	function getCharacter() {
+		var traitSelection = document.getElementsByClassName("trait-icon");
+		var statsSelection = document.getElementsByClassName("subtext-stats");
+
 		// Get Nature
-		characterStatsModel['trait'] = getTrait(document.getElementsByClassName("trait-icon")[0].classList[0], traitIconMap);
+		characterStatsModel['trait'] = getTrait(traitSelection[0].classList[0], traitIconMap);
 		// Get Power
-		characterStatsModel['power'] = parseFloat(document.getElementsByClassName("subtext-stats")[0].childNodes[5].textContent.replace(/,/g, ''));
+		characterStatsModel['power'] = parseFloat(statsSelection[0].childNodes[5].textContent.replace(/,/g, ''));
 		// Get Level
-		characterStatsModel['level'] = parseFloat(document.getElementsByClassName("subtext-stats")[0].childNodes[2].textContent.replace(/\(.*?\)/gi, ''));
+		characterStatsModel['level'] = parseFloat(statsSelection[0].childNodes[2].textContent.replace(/\(.*?\)/gi, ''));
 
 		return characterStatsModel;
 	}
@@ -175,16 +178,8 @@ function buttonAction() {
 
 	function getWeaponPower(character, weapon) {
 		weaponPower = 1;
-		console.log('stats');
-		console.log(objSize(weapon.stats));
 		for (i=0; i< objSize(weapon.stats); i++) {
-			// Add on per weapon stats
-			if (character.trait == weapon.trait) {
-				//weaponPower = weaponPower + (weapon.stats[i].power * weaponExtraPowerSet.charAndWeaponSame)
-			} 
-			
 			if (weapon.trait == weapon.stats[i].trait) {
-				// TODO: Review this line if its - if-if or if-elseif
 				weaponPower = weaponPower + (weapon.stats[i].power * weaponExtraPowerSet.weaponAndPowerSame)
 			}else {
 				weaponPower = weaponPower + (weapon.stats[i].power * weaponExtraPowerSet.default)
@@ -197,8 +192,6 @@ function buttonAction() {
 	function getCharacterTotalPower(characterPower, character, weapon, weaponPower, traitBonus) {
 		// Weapon bonus
 		weaponBonus = 0;
-		console.log('bonus');
-		console.log(objSize(weapon.bonus));
 		if (objSize(weapon.bonus) > 1) {
 			weaponBonus = parseInt(weapon.bonus[0].bonus);
 		}
@@ -276,7 +269,6 @@ function buttonAction() {
 		parentDiv = document.getElementsByClassName('dinnoParentDiv');
 		if (parentDiv.length > 0) {
 			for (i=parentDiv[0].childElementCount;i>0;i--) {
-				console.log(i);
 				document.getElementsByClassName('dinnoParentDiv')[0].removeChild(document.getElementsByClassName('dinnoParentDiv')[0].childNodes[i-1]);
 			}
 		}
@@ -298,7 +290,6 @@ function buttonAction() {
 
 	// BATTLE Probalities
 	for (x=0; x<enemies.length; x++) {
-		console.log('Enemy Number: ' + (x+1));
 		weaponPower = getWeaponPower(character, weapon);
 		traitBonus = getTraitBonus(character, enemies[x], weapon);
 		characterTotalPower = getCharacterTotalPower(character.power, character, weapon, weaponPower, traitBonus);
