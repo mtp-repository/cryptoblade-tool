@@ -1,6 +1,5 @@
-// Set button listerner
-let button = document.getElementById("battleNow");
-button.addEventListener("click", async () => {
+let battleButton = document.getElementById("battleButton");
+battleButton.addEventListener("click", async () => {
 	let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   
 	chrome.scripting.executeScript({

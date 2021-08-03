@@ -1,20 +1,37 @@
 button {
     height: 30px;
-    width: 100px;
+    width: 130px;
     outline: none;
     margin: 10px;
     border: none;
     border-radius: 2px;
     color: white;
-    background-color: cadetblue;
+    background-color: blue;
 }
 
 button:hover {
-  background-color: blue;
-  color: yellow;
+  background-color: red;;
 } 
   
 button.current {
   box-shadow: 0 0 0 2px blue,
               0 0 0 4px black;
+}
+
+#donate {
+  color: blue;
+  cursor: pointer;
+}
+
+#myAddr {
+  display: none;
+}
+
+.message {
+  font-size: 10px;
+}
+
+.center {
+  text-align: center;
+  display: block;
 }
