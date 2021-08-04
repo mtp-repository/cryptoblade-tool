@@ -4,7 +4,7 @@ This was created purely on JS by scraping the data available on the page.
 No external API calls, no need to enter your metamask details.
 
 ## How it works?
-![How it works](images/cryptoblade-toolv3.gif)
+![How it works](git-images/cryptoblade-toolv3.gif)
 - Open cryptoblades site https://app.cryptoblades.io/
 - Please register if you are still not a member.
 - When you are ready! (meaning you have a character and a weapon)
@@ -14,7 +14,7 @@ No external API calls, no need to enter your metamask details.
 - Once, you see the enemy list
 - Click the MTP icon on your chrome extension
 - It should show you your combat winning probability at the bottom of the page near the FIGHT button.
-![How it works](images/sample1.jpg)
+![How it works](git-images/sample1.jpg)
 
 ## How to install?
 - Get from chrome extension
@@ -26,7 +26,7 @@ No external API calls, no need to enter your metamask details.
         - Select button "Load unpacked".
         - Select the directory where you download the tool.
     - Click the extension button in the browser and pin the tool.
-    - ![How to install](images/sample2.jpg)
+    - ![How to install](git-images/sample2.jpg)
 
 ## Recent updates
  - 8/2/2021 Submitted the tool in chrome extension web store - awaiting approval.
