@@ -1,0 +1,18 @@
+Cryptoblades is a play to earn game. Earn SKILL tokens by defeating enemies, raiding with friends, and staking your gains.
+
+This tool will help you win more and in return earn more. The tool will tell you your winning percentage before you hit the FIGHT button. This tool is totally free with no strings attached but you can donate through my ETH address below. 
+
+How it works?
+The tool scrapes the information from the page and computes your probability. This tool does not need any additional information and no external API calls, it is very safe to use.
+
+How to install?
+Just click the MTP mini tool when you are in the combat page and you will see your winning percentage underneath the FIGHT button. For more information visit: https://mini-tech-projects.com/2021/08/02/new-cryptoblades-tool/?preview=true&_thumbnail_id=456
+
+Version 4 Updates:
+- Probability percentage text with color (green, yellow and red)
+- Update description
+- Update HTML JS selectors
+
+NOTICE: Please upgrade your tool to version 4.0 - Cryptoblades has updated their frontend and version 3 and lower will not work anymore.
+
+Please donate: 0x2AaEf9A8679da651340E9AE2b3091A08689ba8d9
