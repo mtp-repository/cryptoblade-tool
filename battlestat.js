@@ -9,6 +9,14 @@ battleButton.addEventListener("click", async () => {
 });
 
 function buttonAction() {
+	// HTML IDs and class
+	htmlSelect = {
+		traitSelection: document.getElementsByClassName("trait-icon"),
+		statsSelection: document.getElementsByClassName("subtext-stats"),
+		weaponSectionSelection: document.getElementsByClassName("weapon-icon-wrapper"),
+		parentDivSelection: document.getElementsByClassName("dinnoParentDiv"),
+		enemyContainerSelection: document.getElementsByClassName('enemy-container')
+	}
 	// Game defaults
 	let weaponExtraPowerSet = {
 		charAndWeaponSame: .002675,
@@ -95,8 +103,8 @@ function buttonAction() {
 	}
 
 	function getCharacter() {
-		var traitSelection = document.getElementsByClassName("trait-icon");
-		var statsSelection = document.getElementsByClassName("subtext-stats");
+		var traitSelection = htmlSelect.traitSelection;
+		var statsSelection = htmlSelect.statsSelection;
 
 		// Get Nature
 		characterStatsModel['trait'] = getTrait(traitSelection[0].classList[0], traitIconMap);
@@ -110,7 +118,7 @@ function buttonAction() {
 
 	function getWeapon() {
 		// Get Weapon
-		weaponArea = document.getElementsByClassName("weapon-icon-wrapper")[0].childNodes[0];
+		weaponArea = htmlSelect.weaponSectionSelection[0].childNodes[0];
 		// Get ID
 		id = weaponArea.getElementsByClassName('id')[0].innerHTML;
 		weaponStatsModel['id'] = parseFloat(id.replace('ID ', ''));
@@ -136,14 +144,15 @@ function buttonAction() {
 	}
 
 	function getEnimies() {
-		let htmlCollection = document.getElementsByClassName("enemy-list");
-		let array = [].slice.call(htmlCollection)
+		let htmlCollection = htmlSelect.enemyContainerSelection;
+		let array = [].slice.call(htmlCollection);
 		
-		encountered = array[0].childNodes;
+		encountered = htmlCollection[0].getElementsByClassName("encounter");
 		for (let j = 0; j < encountered.length; j++) {
 			enemyObj = {};
 			// Get Nature
-			trait = getTrait(encountered[j].getElementsByClassName("encounter-element")[0].childNodes[0].getAttribute("class"), traitIconMap);
+			singleEnemyContainer = encountered[j].getElementsByClassName("encounter-container")[0].childNodes[0];
+			trait = getTrait(singleEnemyContainer.getElementsByClassName("encounter-element")[0].childNodes[0].getAttribute("class"), traitIconMap);
 			enemyObj['trait'] = trait;
 			// Get Power
 			power = encountered[j].getElementsByClassName("encounter-power")[0].innerHTML;
@@ -237,15 +246,15 @@ function buttonAction() {
 	}
 
 	function addParentDiv(count, stats) {
-		className = 'dinnoParentDiv';
-		parentDiv = document.getElementsByClassName(className);
+		parentDiv = htmlSelect.parentDivSelection;
 
 		if (parentDiv.length == 0) {
 			const div = document.createElement('div');
+			div.style.width = '100%';
 			div.style.display = 'flex';
 			div.style.paddingTop = '5%';
-			div.className = className;
-			document.getElementsByClassName('enemy-container')[0].appendChild(div);
+			div.className = 'dinnoParentDiv';
+			htmlSelect.enemyContainerSelection[0].appendChild(div);
 		}
 	}
 
@@ -258,18 +267,25 @@ function buttonAction() {
 		div.style.textAlign = 'center';
 		div.style.alignItems = 'center';
 		div.style.fontSize = '26pt';
+		var color = 'red';
+		if (stats >= 90) {
+			color = 'green';
+		} else if (stats >= 75 ) {
+			color = 'yellow';
+		} 
+		div.style.color = color;
 
 		div.className = 'dinnoChildDiv';
 		div.innerHTML = stats.toFixed(2) + '%';
 	
-		document.getElementsByClassName('dinnoParentDiv')[0].appendChild(div);
+		htmlSelect.parentDivSelection[0].appendChild(div);
 	}
 	
 	function removeChildDiv() {
-		parentDiv = document.getElementsByClassName('dinnoParentDiv');
+		parentDiv = htmlSelect.parentDivSelection;
 		if (parentDiv.length > 0) {
 			for (i=parentDiv[0].childElementCount;i>0;i--) {
-				document.getElementsByClassName('dinnoParentDiv')[0].removeChild(document.getElementsByClassName('dinnoParentDiv')[0].childNodes[i-1]);
+				parentDiv[0].removeChild(parentDiv[0].childNodes[i-1]);
 			}
 		}
 	}
